@@ -64,7 +64,7 @@ function l () {
     Write-Host $currdir -NoNewline -ForegroundColor White
     Write-Host " are:" -ForegroundColor Yellow
     Write-Host "=============================" -ForegroundColor Cyan
-    $files = Get-ChildItem -Name
+    [string[]]$files = Get-ChildItem -Name
     for ($i = 0; $i -lt $files.Count; $i++) {
         Write-Host ("{0,2}. {1}" -f $i, $files[$i]) -ForegroundColor Green
     }
