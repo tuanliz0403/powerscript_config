@@ -16,6 +16,7 @@ $FILE_QUERRY = Join-Path $myModulePath "FILE_QUERRY.ps1"
 $FILE_MANAGER = Join-Path $myModulePath "FILE_MANAGER.ps1"
 $FUNCTIONS = Join-Path $myModulePath "FUNCTIONS.ps1"
 $C_CPP_COMPILER = Join-Path $myModulePath "C_CPP.ps1"
+$HASKELL_COMPILER = Join-Path $myModulePath "HASKELL.ps1"
 
 . $INIT
 . $FILE_QUERRY
@@ -23,4 +24,5 @@ $C_CPP_COMPILER = Join-Path $myModulePath "C_CPP.ps1"
 . $NAV
 . $FUNCTIONS
 . $C_CPP_COMPILER
+. $HASKELL_COMPILER 
 
