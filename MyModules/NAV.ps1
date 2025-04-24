@@ -64,3 +64,7 @@ function cur() {
     Write-Host $curr -ForegroundColor Green
     Set-Clipboard -Value $curr;
 }
+
+function profile() {
+    code $profile/..
+}
