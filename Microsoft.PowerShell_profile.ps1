@@ -11,6 +11,7 @@ $configPath = Split-Path -Parent $PROFILE
 $myModulePath = Join-Path $configPath "MyModules"
 
 $INIT = Join-Path $myModulePath "INIT.ps1"
+$JAVA_COMPILER = Join-Path $myModulePath "JAVA.ps1"
 $NAV = Join-Path $myModulePath "NAV.ps1"
 $FILE_QUERRY = Join-Path $myModulePath "FILE_QUERRY.ps1"
 $FILE_MANAGER = Join-Path $myModulePath "FILE_MANAGER.ps1"
@@ -24,5 +25,6 @@ $HASKELL_COMPILER = Join-Path $myModulePath "HASKELL.ps1"
 . $NAV
 . $FUNCTIONS
 . $C_CPP_COMPILER
+. $JAVA_COMPILER
 . $HASKELL_COMPILER 
 

@@ -235,3 +235,10 @@ function tochar() {
 }
 
 
+function profile() {
+    code $profile/..
+}
+
+function load() {
+    . $profile
+}
