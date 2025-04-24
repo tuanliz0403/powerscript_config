@@ -65,6 +65,3 @@ function cur() {
     Set-Clipboard -Value $curr;
 }
 
-function profile() {
-    code $profile/..
-}

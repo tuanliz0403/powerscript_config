@@ -1,11 +1,12 @@
-function bldJava([string]$name) {
-    $compilefile = $name + ".java"
+function bldJava {
+    param([string]$name)
+    $compilefile = "$name.java"
     javac $compilefile
-    $exefile = $name
+    $exefile = "$name.class"
     if (Test-Path $exefile) {
         Write-Host "Compilation successful" -ForegroundColor Green
         $startTime = Get-Date
-        java $exefile
+        java $name
         $endTime = Get-Date
         $executionTime = $endTime - $startTime
         Write-Host "Execution time: $($executionTime.TotalSeconds) seconds" -ForegroundColor Yellow
@@ -13,6 +14,5 @@ function bldJava([string]$name) {
     }
     else {
         Write-Host "Compilation failed" -ForegroundColor Red
-        return
     }
 }
