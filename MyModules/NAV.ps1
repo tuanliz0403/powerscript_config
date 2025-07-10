@@ -19,6 +19,11 @@ function cses {
     Set-Location C:\CSES
     l
 }
+# Jump to ANU
+function anu {
+    Set-Location D:\ANU
+    l
+}
 
 # Jump to Home
 function tuan {
