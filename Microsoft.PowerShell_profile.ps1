@@ -21,7 +21,7 @@ $HASKELL_COMPILER = Join-Path $myModulePath "HASKELL.ps1"
 $CALCULATOR = Join-Path $myModulePath "CALCULATOR.ps1"
 
 . $INIT
-. $FILE_QUERRY
+. $FILE_QUERY
 . $FILE_MANAGER
 . $NAV
 . $FUNCTIONS
