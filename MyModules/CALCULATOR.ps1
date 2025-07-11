@@ -38,17 +38,18 @@ function calc {
         $result = Invoke-Expression $safeExpr
         $global:last = $result
         $global:calcHistory += "$expr = $result"
-        Write-Output $result
+        Write-Host $result -ForegroundColor Green
     }
     catch {
         Write-Host "❌ Error: $_"
     }
 }
 
-function calc-repl {
-    Write-Host "PowerShell Smart Calculator (type 'exit' to quit, 'clear' to reset, 'history' to view history)"
+function repl {
+    Write-Host "REPL Activated. Author: Minh Tuan Pham" -ForegroundColor Green
+    Write-Host "exit-clear-history" -ForegroundColor Yellow
     while ($true) {
-        $input = Read-Host ">>>"
+        $input = Read-Host "Minh Tuan Pham>>>"
         if ($input -eq "exit") { break }
         if ($input -eq "") { continue }
         calc $input

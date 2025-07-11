@@ -30,7 +30,13 @@ function tuan {
     Set-Location ~
     l
 }
-
+function D {
+    Set-Location D:\
+    l
+}function C {
+    Set-Location C:\
+    l
+}
 # cd but have navigation and colors
 function g($Item) {
     Clear-Host
