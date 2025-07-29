@@ -1,6 +1,10 @@
 function bldJava {
     param([string]$name)
-    $compilefile = "$name.java"
+    if ($name -notlike '*.java') {
+        $compilefile = "$name.java"
+    } else {
+        $compilefile = $name
+    }
     javac $compilefile
     $exefile = "$name.class"
     if (Test-Path $exefile) {
@@ -15,4 +19,10 @@ function bldJava {
     else {
         Write-Host "Compilation failed" -ForegroundColor Red
     }
+}
+function bldj {
+    param([string]$name, [string[]]$args)
+    $compilefile = $name
+    Write-Host $args
+    java --enable-preview $compilefile $args
 }

@@ -33,10 +33,17 @@ function tuan {
 function D {
     Set-Location D:\
     l
-}function C {
+}
+function C {
     Set-Location C:\
     l
 }
+function comp1110{
+    Set-Location D:\ANU\COMP1110
+    l
+
+}
+    
 # cd but have navigation and colors
 function g($Item) {
     Clear-Host

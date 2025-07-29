@@ -6,6 +6,8 @@
 # It's your preference.
 # ******************************************************************************
 
+oh-my-posh init pwsh --config 'agnosterplus' | Invoke-Expression
+
 Get the config folder of different devices
 $configPath = Split-Path -Parent $PROFILE
 $myModulePath = Join-Path $configPath "MyModules"
