@@ -26,3 +26,9 @@ function bldj {
     Write-Host $args
     java --enable-preview $compilefile $args
 }
+
+function testj{
+    param([String]$name)
+    $compilefile = Split-Path $name -Leaf
+    java --enable-preview comp1110.testing.Test $compilefile
+}
