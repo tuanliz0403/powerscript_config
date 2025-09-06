@@ -6,7 +6,7 @@
 # It's your preference.
 # ******************************************************************************
 
-oh-my-posh init pwsh --config 'agnosterplus' | Invoke-Expression
+oh-my-posh init pwsh --config $PROFILE/../theme/agnoster.omp.json | Invoke-Expression
 
 Get the config folder of different devices
 $configPath = Split-Path -Parent $PROFILE
@@ -32,3 +32,13 @@ $CALCULATOR = Join-Path $myModulePath "CALCULATOR.ps1"
 . $CALCULATOR
 . $HASKELL_COMPILER 
 
+
+# Import the Chocolatey Profile that contains the necessary code to enable
+# tab-completions to function for `choco`.
+# Be aware that if you are missing these lines from your profile, tab completion
+# for `choco` will not function.
+# See https://ch0.co/tab-completion for details.
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+  Import-Module "$ChocolateyProfile"
+}
