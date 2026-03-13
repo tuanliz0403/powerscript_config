@@ -14,6 +14,18 @@ function hcmus {
     l
 }
 
+function c2300 {
+    Clear-Host
+    Set-Location D:\ANU\COMP2300
+    l
+}
+
+function c2100 {
+    Clear-Host
+    Set-Location D:\ANU\COMP2100
+    l
+}
+
 # Jump to CSES
 function cses {
     Set-Location C:\CSES
