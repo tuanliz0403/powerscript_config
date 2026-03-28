@@ -27,10 +27,9 @@ $CALCULATOR = Join-Path $myModulePath "CALCULATOR.ps1"
 . $FILE_MANAGER
 . $NAV
 . $FUNCTIONS
-. $C_CPP_COMPILER
-. $JAVA_COMPILER
-. $CALCULATOR
-. $HASKELL_COMPILER 
+# . $C_CPP_COMPILER
+# . $JAVA_COMPILER
+# . $HASKELL_COMPILER 
 
 
 # Import the Chocolatey Profile that contains the necessary code to enable

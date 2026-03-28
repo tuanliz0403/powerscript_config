@@ -26,6 +26,13 @@ function c2100 {
     l
 }
 
+function c2700 {
+    Clear-Host
+    Set-Location D:\ANU\COMP2700
+    l
+}
+
+
 # Jump to CSES
 function cses {
     Set-Location C:\CSES

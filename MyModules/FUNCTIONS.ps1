@@ -11,7 +11,25 @@ function cl {
     Clear-Host 
     l
 }
+Function nl 
+{
+<# .Synopsis
+    Mimic Unic / Linux tool nl number lines
+   .Description
+    Print file content with numbered lines no original nl options supported
+   .Example
+     nl .\food.txt
+#>
+  param (
+    [parameter(mandatory=$true, Position=0)][String]$FileName
+  )
 
+  process {
+    If (Test-Path $FileName){
+      Get-Content $FileName | ForEach{ "{0,5} {1}" -f $_.ReadCount,$_ }
+    }
+  }
+}
 # Return power of a and b and copy to clipboard
 function pow() {
     $res = [math]::Pow($args[0], $args[1])
