@@ -42,10 +42,18 @@ function makecpp {
 }
 # Find and compile requested .c file name in current folder
 function bld {
-    for ($i = 0; $i -lt $args.Count; $i++) {
-        $args[$i] = $args[$i] + ".c"
+    $files = @()
+
+    foreach ($arg in $args) {
+        if ($arg -match "\.c$") {
+            $files += $arg
+        } else {
+            $files += "$arg.c"
+        }
     }
-    gcc $args -o main.exe -Wall -Wextra -g
+
+    gcc $files -o main.exe -Wall -Wextra -g
+
     if (Test-Path main.exe) {
         Write-Host "Compilation successful" -ForegroundColor Green
         $startTime = Get-Date
@@ -54,18 +62,24 @@ function bld {
         $executionTime = $endTime - $startTime
         Write-Host "Execution time: $($executionTime.TotalSeconds) seconds" -ForegroundColor Yellow
         Remove-Item main.exe
-    }
-    else {
+    } else {
         Write-Host "Compilation failed" -ForegroundColor Red
-        return
     }
 }
 # Find and compile requested .cpp file name in current folder
-function bld+() {
-    for ($i = 0; $i -lt $args.Count; $i++) {
-        $args[$i] = $args[$i] + ".cpp"
+function bld+ {
+    $files = @()
+
+    foreach ($arg in $args) {
+        if ($arg -match "\.cpp$") {
+            $files += $arg
+        } else {
+            $files += "$arg.cpp"
+        }
     }
-    g++ $args -o main.exe -Wall -Wextra -g
+
+    g++ $files -o main.exe -Wall -Wextra -g
+
     if (Test-Path main.exe) {
         Write-Host "Compilation successful" -ForegroundColor Green
         $startTime = Get-Date
@@ -74,10 +88,8 @@ function bld+() {
         $executionTime = $endTime - $startTime
         Write-Host "Execution time: $($executionTime.TotalSeconds) seconds" -ForegroundColor Yellow
         Remove-Item main.exe
-    }
-    else {
+    } else {
         Write-Host "Compilation failed" -ForegroundColor Red
-        return
     }
 }
 
